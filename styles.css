@@ -42,7 +42,7 @@ body {
 
 body.home-page {
     background: linear-gradient(135deg, rgba(0, 61, 130, 0.75) 0%, rgba(0, 102, 204, 0.75) 100%),
-                url('conferenceAI.png') center/cover fixed no-repeat;
+                url('conferenceAI.webp') center/cover fixed no-repeat;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -94,7 +94,7 @@ button {
 
 .navbar {
     background: linear-gradient(135deg, rgba(232, 241, 248, 0.95) 0%, rgba(210, 230, 250, 0.95) 100%),
-                url('conferenceAI.png') center/cover no-repeat;
+                url('conferenceAI.webp') center/cover no-repeat;
     background-attachment: fixed;
     color: var(--primary-blue);
     padding: 0;
@@ -253,7 +253,7 @@ button {
 
 .hero {
     background: linear-gradient(135deg, rgba(0, 61, 130, 0.85) 0%, rgba(0, 102, 204, 0.85) 100%),
-                url('conferenceAI.png') center/cover no-repeat;
+                url('conferenceAI.webp') center/cover no-repeat;
     background-size: cover;
     background-position: center;
     color: var(--white);
@@ -321,7 +321,7 @@ button {
 
 .page-header {
     background: linear-gradient(135deg, rgba(232, 241, 248, 0.92) 0%, rgba(210, 230, 250, 0.92) 100%),
-                url('conferenceAI.png') center/cover no-repeat;
+                url('conferenceAI.webp') center/cover no-repeat;
     background-attachment: fixed;
     color: var(--primary-blue);
     padding: 60px 20px;
@@ -581,7 +581,7 @@ article a:hover {
 }
 
 .venue-bg {
-    background: linear-gradient(135deg, rgba(0, 61, 130, 0.85) 0%, rgba(0, 102, 204, 0.85) 100%), url('서구청.jpeg') center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(0, 61, 130, 0.85) 0%, rgba(0, 102, 204, 0.85) 100%), url('서구청.webp') center/cover no-repeat;
     background-attachment: fixed;
 }
 
