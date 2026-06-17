@@ -3,6 +3,16 @@
    Professional CSS Stylesheet
    ==================================== */
 
+/*
+Font
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+
 /* Root Variables */
 :root {
     --primary-blue: #003d82;
@@ -30,19 +40,30 @@
 
 html, body {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
 }
 
 body {
-    font-family: 'Segoe UI', 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family:"Montserrat", sans-serif;
     line-height: 1.6;
     color: var(--text-gray);
     background-color: var(--white);
 }
 
+.page-content {
+    flex: 1;
+}
+
+.footer {
+    margin-top: auto;
+}
+
 body.home-page {
-    background: linear-gradient(135deg, rgba(0, 61, 130, 0.75) 0%, rgba(0, 102, 204, 0.75) 100%),
-                url('conferenceAI.webp') center/cover fixed no-repeat;
+    background: transparent;
+
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -59,9 +80,7 @@ a {
     transition: color 0.3s ease;
 }
 
-a:hover {
-    color: var(--accent-blue);
-}
+
 
 .container {
     max-width: 1200px;
@@ -93,15 +112,19 @@ button {
    ==================================== */
 
 .navbar {
-    background: linear-gradient(135deg, rgba(232, 241, 248, 0.95) 0%, rgba(210, 230, 250, 0.95) 100%),
-                url('conferenceAI.webp') center/cover no-repeat;
-    background-attachment: fixed;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
     color: var(--primary-blue);
     padding: 0;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.6px;
 }
 
 .nav-container {
@@ -113,6 +136,7 @@ button {
     align-items: center;
     padding: 0.75rem 2rem 0.75rem 2rem;
     gap: 0;
+    background: transparent;
 }
 
 .logo-section {
@@ -140,6 +164,7 @@ button {
     font-weight: 700;
     letter-spacing: 1px;
     color: #0F2141;
+    font-family: "Montserrat", sans-serif;
 }
 
 .nav-menu {
@@ -162,12 +187,10 @@ button {
     font-size: 0.95rem;
     transition: color 0.3s ease;
     border-bottom: 3px solid transparent;
+    font-family: "Montserrat", sans-serif;
 }
 
-.nav-link:hover {
-    color: var(--secondary-blue);
-    border-bottom: 3px solid var(--secondary-blue);
-}
+
 
 /* Dropdown Menu */
 .dropdown-menu {
@@ -219,6 +242,7 @@ button {
     font-size: 0.9rem;
     border-bottom: 1px solid var(--light-gray);
     transition: all 0.3s ease;
+    font-family: "Montserrat", sans-serif;
 }
 
 .dropdown-link:last-child {
@@ -226,8 +250,7 @@ button {
 }
 
 .dropdown-link:hover {
-    background-color: var(--light-blue);
-    color: var(--secondary-blue);
+    background-color: #f3f1f1;
 }
 
 /* Hamburger Menu */
@@ -252,8 +275,13 @@ button {
    ==================================== */
 
 .hero {
-    background: linear-gradient(135deg, rgba(0, 61, 130, 0.85) 0%, rgba(0, 102, 204, 0.85) 100%),
-                url('conferenceAI.webp') center/cover no-repeat;
+background:
+    linear-gradient(
+        135deg,
+        rgba(211, 211, 211, 0.85) 0%,
+        rgba(211, 211, 211, 0.85) 100%
+    ),
+    url('conferenceAI.webp') center/cover no-repeat;
     background-size: cover;
     background-position: center;
     color: var(--white);
@@ -651,15 +679,7 @@ article a:hover {
     transition: all 0.3s ease;
 }
 
-.objective-card:hover,
-.amenity-card:hover,
-.program-card:hover,
-.agenda-card:hover,
-.contact-info-card:hover,
-.department-card:hover {
-    background: linear-gradient(135deg, var(--light-blue) 0%, rgba(0, 153, 255, 0.05) 100%);
-    box-shadow: 0 4px 12px rgba(0, 61, 130, 0.15);
-}
+
 
 .objective-card h3,
 .amenity-card h3,
@@ -813,10 +833,6 @@ article a:hover {
     transition: all 0.3s ease;
 }
 
-.pricing-item:hover {
-    box-shadow: 0 8px 16px rgba(0, 61, 130, 0.2);
-    transform: translateY(-5px);
-}
 
 .pricing-item h3 {
     color: var(--primary-blue);
@@ -965,9 +981,9 @@ article a:hover {
    ==================================== */
 
 .footer {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-    color: var(--white);
-    padding: 3rem 20px 1rem;
+    background: transparent;
+    color: #0F2141;
+    padding: 1rem 20px 0.75rem;
     margin-top: auto;
 }
 
@@ -1010,9 +1026,10 @@ article a:hover {
 
 .footer-bottom {
     text-align: center;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 0.8);
+    font-family: "Montserrat", sans-serif;
+    padding-top: 0.5rem;
+    border-top: none;
+    color: rgba(84, 84, 84, 0.8);
     font-size: 0.9rem;
     max-width: 1200px;
     margin: 0 auto;
