@@ -163,6 +163,40 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+const createRecruitingChairsPopout = () => {
+    if (document.body.classList.contains('home-page')) {
+        return;
+    }
+
+    const popout = document.createElement('div');
+    popout.className = 'recruiting-popout';
+    popout.innerHTML = `
+        <h2>Recruting Chairs!</h2>
+        <p>Please click on this <a href="https://forms.gle/ocSXyokJHexfCrEM9" target='_blank'>link</a> to learn more</p>
+    `;
+
+    document.body.appendChild(popout);
+
+    const dismiss = () => {
+        if (!popout.classList.contains('hide')) {
+            popout.classList.add('hide');
+            window.setTimeout(() => {
+                if (popout.parentNode) {
+                    popout.parentNode.removeChild(popout);
+                }
+            }, 300);
+        }
+    };
+
+    window.setTimeout(dismiss, 9000);
+};
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', createRecruitingChairsPopout);
+} else {
+    createRecruitingChairsPopout();
+}
+
 // Handle window resize for responsive menu
 let resizeTimer;
 window.addEventListener('resize', () => {

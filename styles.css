@@ -57,6 +57,50 @@ body {
     flex: 1;
 }
 
+.about-kylo-page .page-content .container,
+.about-iymun-page .page-content .container {
+    position: relative;
+}
+
+.about-kylo-page .page-content .container::before {
+    content: '';
+    position: absolute;
+    top: -500px;
+    left: -400px;
+    width: 1000px;
+    height: 1000px;
+    background: url('kylologo.webp') center/contain no-repeat;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.about-iymun-page .page-content .container::before {
+    content: '';
+    position: absolute;
+    top: -450px;
+    left: -400px;
+    width: 1000px;
+    height: 1000px;
+    background: url('iymunlogo.webp') center/contain no-repeat;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.about-kylo-page .page-content article,
+.about-iymun-page .page-content article {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 900px) {
+    .about-kylo-page .page-content .container::before,
+    .about-iymun-page .page-content .container::before {
+        display: none;
+    }
+}
+
 .footer {
     margin-top: auto;
 }
@@ -107,6 +151,65 @@ button {
     }
 }
 
+.recruiting-popout {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 1100;
+    width: min(320px, calc(100vw - 48px));
+    background: linear-gradient(180deg, #0a4da4 0%, #2b79d9 100%);
+    color: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+    padding: 20px 22px;
+    animation: popoutFadeIn 0.4s ease-out;
+}
+
+.recruiting-popout h2 {
+    margin: 0 0 10px;
+    font-size: 1.13rem;
+    letter-spacing: 0.02em;
+}
+
+.recruiting-popout p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.recruiting-popout a {
+    color: #ffec7a;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.recruiting-popout.hide {
+    animation: popoutFadeOut 0.3s ease-in forwards;
+}
+
+@keyframes popoutFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-14px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes popoutFadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.98);
+    }
+}
+
 /* ====================================
    NAVBAR STYLES
    ==================================== */
@@ -137,15 +240,6 @@ button {
     padding: 0.75rem 2rem 0.75rem 2rem;
     gap: 0;
     background: transparent;
-}
-
-.logo-section {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
-    order: 1;
-    margin-left: 0;
 }
 
 .nav-menu {
@@ -278,8 +372,8 @@ button {
 background:
     linear-gradient(
         135deg,
-        rgba(211, 211, 211, 0.85) 0%,
-        rgba(211, 211, 211, 0.85) 100%
+        rgba(194, 194, 194, 0.85) 0%,
+        rgba(179, 179, 179, 0.85) 100%
     ),
     url('conferenceAI.webp') center/cover no-repeat;
     background-size: cover;
@@ -348,8 +442,7 @@ background:
    ==================================== */
 
 .page-header {
-    background: linear-gradient(135deg, rgba(232, 241, 248, 0.92) 0%, rgba(210, 230, 250, 0.92) 100%),
-                url('conferenceAI.webp') center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(30, 131, 198, 0.92) 0%, rgba(162, 178, 193, 0.92) 100%);
     background-attachment: fixed;
     color: var(--primary-blue);
     padding: 60px 20px;
@@ -527,7 +620,6 @@ background:
 
 .btn-primary:hover {
     background-color: #00b359;
-    transform: translateY(-2px);
 }
 
 .btn-secondary {
@@ -648,6 +740,19 @@ article a:hover {
     text-decoration: underline;
 }
 
+.venue-bg .amenity-card,
+.venue-bg .amenity-card p {
+    color: var(--text-gray);
+}
+
+.venue-bg .amenity-card h3 {
+    color: var(--primary-blue);
+}
+
+.venue-bg .amenities-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
 /* ====================================
    GRID LAYOUTS
    ==================================== */
@@ -673,7 +778,7 @@ article a:hover {
 .contact-info-card,
 .department-card {
     background: var(--light-blue);
-    padding: 2rem;
+    padding: 0.8rem 1.2rem;
     border-radius: 8px;
     border-left: 4px solid var(--secondary-blue);
     transition: all 0.3s ease;
@@ -743,6 +848,23 @@ article a:hover {
     border-left: 4px solid var(--secondary-blue);
     margin: 2rem 0;
 }
+
+.registration-cta {
+    text-align: center;
+}
+
+.registration-cta a.btn-primary {
+    display: inline-block;
+    min-width: 280px;
+    padding: 18px 44px;
+    font-size: 1.05rem;
+    border-radius: 38px;
+    background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
+    box-shadow: 0 14px 28px rgba(0, 61, 130, 0.18);
+    color: var(--white);
+}
+
+
 
 .contact-box h3,
 .info-box h3,
