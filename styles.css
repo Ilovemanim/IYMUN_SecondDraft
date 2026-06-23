@@ -1,5 +1,5 @@
 /* ====================================
-   IYMUN - International Youth Model United Nations
+   KYOMUN - Korean Youth Online Model United Nations
    Professional CSS Stylesheet
    ==================================== */
 
@@ -58,7 +58,7 @@ body {
 }
 
 .about-kylo-page .page-content .container,
-.about-iymun-page .page-content .container {
+.about-kyomun-page .page-content .container {
     position: relative;
 }
 
@@ -75,28 +75,59 @@ body {
     z-index: 0;
 }
 
-.about-iymun-page .page-content .container::before {
+.about-kyomun-page .page-content .container::before {
     content: '';
     position: absolute;
     top: -450px;
     left: -400px;
     width: 1000px;
     height: 1000px;
-    background: url('iymunlogo.webp') center/contain no-repeat;
+    background: url('kyomunlogo.webp') center/contain no-repeat;
     opacity: 0.1;
     pointer-events: none;
     z-index: 0;
 }
 
 .about-kylo-page .page-content article,
-.about-iymun-page .page-content article {
+.about-kyomun-page .page-content article {
     position: relative;
     z-index: 1;
 }
 
 @media (max-width: 900px) {
     .about-kylo-page .page-content .container::before,
-    .about-iymun-page .page-content .container::before {
+    .about-kyomun-page .page-content .container::before {
+        display: none;
+    }
+}
+
+/* KYOMUN header background for Overview / Schedule / Conference Material pages */
+.kyomun-page .page-header {
+    position: relative;
+    overflow: hidden;
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+}
+
+.kyomun-page .page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('KYOMUN_Background.webp') center/cover no-repeat;
+    opacity: 0.14;
+    pointer-events: none;
+    z-index: 0;
+    transform: scale(1.02);
+}
+
+.kyomun-page .page-header .container {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 900px) {
+    .kyomun-page .page-header::before {
         display: none;
     }
 }
@@ -445,20 +476,28 @@ background:
     background: linear-gradient(135deg, rgba(30, 131, 198, 0.92) 0%, rgba(162, 178, 193, 0.92) 100%);
     background-attachment: fixed;
     color: var(--primary-blue);
-    padding: 60px 20px;
+    padding: 90px 20px 60px;
     text-align: center;
 }
 
 .page-header h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
-    color: var(--primary-blue);
+    color: #ffffff;
+    display: inline-block;
+    background: #0f2141;
+    padding: 10px 18px;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(15, 33, 65, 0.45);
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.45);
 }
 
 .page-header p {
     font-size: 1.1rem;
-    opacity: 0.85;
-    color: var(--primary-blue);
+    opacity: 0.95;
+    color: #f2f7fb;
 }
 
 /* ====================================
@@ -862,6 +901,89 @@ article a:hover {
     background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
     box-shadow: 0 14px 28px rgba(0, 61, 130, 0.18);
     color: var(--white);
+}
+
+.custom-registration-btn {
+    text-align: center;
+    margin: 3rem 0;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, rgba(0, 153, 255, 0.08) 0%, rgba(0, 102, 204, 0.08) 100%);
+    border-radius: 12px;
+    border: 2px solid #0099ff;
+    position: relative;
+}
+
+.custom-registration-btn::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #0099ff 0%, #0066cc 100%);
+    border-radius: 12px;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.custom-registration-btn a {
+    display: inline-block;
+    padding: 18px 70px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--white);
+    background: linear-gradient(135deg, #0099ff 0%, #0066cc 100%);
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 12px 35px rgba(0, 102, 204, 0.4);
+    transition: all 0.35s ease;
+    letter-spacing: 0.8px;
+    border: none;
+    cursor: pointer;
+}
+
+.custom-registration-btn a:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 20px 50px rgba(0, 102, 204, 0.5);
+    background: linear-gradient(135deg, #00b3ff 0%, #0073e6 100%);
+}
+
+.download-box {
+    background: rgba(0, 102, 204, 0.08);
+    border-left-color: var(--secondary-blue);
+    padding: 24px;
+    border-radius: 14px;
+    margin: 1.75rem 0;
+}
+
+.download-box h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.download-box p {
+    color: var(--dark-gray);
+    margin-bottom: 1.1rem;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
+    box-shadow: 0 12px 24px rgba(0, 61, 130, 0.18);
+    color: var(--white);
+}
+
+.download-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 16px 30px rgba(0, 61, 130, 0.22);
 }
 
 
