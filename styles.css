@@ -102,7 +102,7 @@ body {
 }
 
 /* KYOMUN header background for Overview / Schedule / Conference Material pages */
-.kyomun-page .page-header {
+.page-header {
     position: relative;
     overflow: hidden;
     min-height: 260px;
@@ -110,24 +110,23 @@ body {
     align-items: center;
 }
 
-.kyomun-page .page-header::before {
+.page-header::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: url('KYOMUN_Background.webp') center/cover no-repeat;
     opacity: 0.14;
     pointer-events: none;
     z-index: 0;
     transform: scale(1.02);
 }
 
-.kyomun-page .page-header .container {
+.page-header .container {
     position: relative;
     z-index: 1;
 }
 
 @media (max-width: 900px) {
-    .kyomun-page .page-header::before {
+    .page-header::before {
         display: none;
     }
 }
