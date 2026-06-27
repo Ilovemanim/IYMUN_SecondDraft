@@ -1596,11 +1596,17 @@ article a:hover {
 
     /* Hero */
     .hero-content h1 {
-        font-size: 1.5rem;
+        font-size: clamp(5rem, 18vw, 8rem);
+        line-height: 1;
     }
 
     .hero-content .tagline {
-        font-size: 1rem;
+        display: none;
+    }
+
+    .hero {
+        padding: 40px 18px;
+        min-height: 520px;
     }
 
     /* About Section */
